@@ -1,0 +1,6 @@
+---
+- name: Update GeoIP databases
+  command: '{{ maxmind_binary }} -f {{ maxmind_filename }}'
+  register: geoipupdate_check
+  failed_when: geoipupdate_check.rc > 1
+

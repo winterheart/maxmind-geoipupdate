@@ -1,0 +1,13 @@
+---
+- name: Install Maxmind GeoIP packages
+  package:
+    name: "{{ maxmind_package_el }}"
+    state: present
+
+#- name: Gather package facts
+#  package_facts:
+#    manager: 'auto'
+
+#- name: Check package version
+#  debug: var=ansible_facts.packages['{{ maxmind.package.el }}'].version
+

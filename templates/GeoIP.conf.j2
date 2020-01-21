@@ -1,0 +1,27 @@
+# {{ ansible_managed }}
+
+# FIXME only for <= 2_5
+UserId {{ maxmind_settings_AccoundId }}
+LicenseKey {{ maxmind_settings_LicenseKey }}
+# FIXME only for <= 2_5
+ProductIds{% for item in maxmind_settings_EditionIDs %} {{ item }}{% endfor %}
+
+{% if maxmind_settings_DatabaseDirectory is defined and maxmind_settings_DatabaseDirectory|length %}
+DatabaseDirectory {{ maxmind_settings_DatabaseDirectory }}
+{% endif %}
+{% if maxmind_settings_Host is defined and maxmind_settings_Host|length %}
+Host {{ maxmind_settings_Host }}
+{% endif %}
+{% if maxmind_settings_Proxy is defined and maxmind_settings_Proxy|length %}
+Proxy {{ maxmind_settings_Proxy }}
+{% endif %}
+{% if maxmind_settings_ProxyUserPassword is defined and maxmind_settings_ProxyUserPassword|length %}
+ProxyUserPassword {{ maxmind_settings_ProxyUserPassword }}
+{% endif %}
+{% if maxmind_settings_PreserveFileTimes is defined and maxmind_settings_PreserveFileTimes|length %}
+PreserveFileTimes {{ maxmind_settings_PreserveFileTimes }}
+{% endif %}
+{% if maxmind_settings_LockFile is defined and maxmind_settings_LockFile|length %}
+LockFile {{ maxmind_settings_LockFile }}
+{% endif %}
+
