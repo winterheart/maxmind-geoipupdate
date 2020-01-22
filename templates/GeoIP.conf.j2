@@ -1,10 +1,20 @@
 # {{ ansible_managed }}
 
-# FIXME only for <= 2_5
-UserId {{ maxmind_settings_AccoundId }}
+{% if maxmind_package.version is defined and maxmind_package.version < '3.1.1' %}
+# Settings for geoipupdate < 3.1.1
+UserId {{ maxmind_settings_AccountID }}
+{% else %}
+# Settings for geoipupdate >= 3.1.1
+AccountID {{ maxmind_settings_AccountID }}
+{% endif %}
 LicenseKey {{ maxmind_settings_LicenseKey }}
-# FIXME only for <= 2_5
+{% if maxmind_package.version is defined and maxmind_package.version < '3.1.1' %}
 ProductIds{% for item in maxmind_settings_EditionIDs %} {{ item }}{% endfor %}
+
+{% else %}
+EditionIDs{% for item in maxmind_settings_EditionIDs %} {{ item }}{% endfor %}
+
+{% endif %}
 
 {% if maxmind_settings_DatabaseDirectory is defined and maxmind_settings_DatabaseDirectory != '/usr/share/GeoIP' %}
 DatabaseDirectory {{ maxmind_settings_DatabaseDirectory }}

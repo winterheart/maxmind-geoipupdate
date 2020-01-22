@@ -1,5 +1,4 @@
 ---
-
 - name: Setup '{{ maxmind_settings_DatabaseDirectory }}' directory
   file:
     path: '{{ maxmind_settings_DatabaseDirectory }}'

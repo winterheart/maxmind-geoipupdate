@@ -1,7 +1,6 @@
 # maxmind-geoipupdate - Ansible role for Maxmind geoipupdate package
 
-This role installs and configures geoipupdate package. Currently supported
-only geoipupdate <= 3.1.1
+This role installs and configures geoipupdate package.
 
 ## Example Playbook
 
@@ -12,7 +11,7 @@ only geoipupdate <= 3.1.1
   roles:
     - { role: maxmind-geoipupdate }
   vars:
-    maxmind_settings_AccoundId: '999999'
+    maxmind_settings_AccountID: '999999'
     maxmind_settings_LicenseKey: '000000000000'
 ```
 
