@@ -6,7 +6,7 @@ LicenseKey {{ maxmind_settings_LicenseKey }}
 # FIXME only for <= 2_5
 ProductIds{% for item in maxmind_settings_EditionIDs %} {{ item }}{% endfor %}
 
-{% if maxmind_settings_DatabaseDirectory is defined and maxmind_settings_DatabaseDirectory|length %}
+{% if maxmind_settings_DatabaseDirectory is defined and maxmind_settings_DatabaseDirectory != '/usr/share/GeoIP' %}
 DatabaseDirectory {{ maxmind_settings_DatabaseDirectory }}
 {% endif %}
 {% if maxmind_settings_Host is defined and maxmind_settings_Host|length %}

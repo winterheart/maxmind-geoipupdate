@@ -31,7 +31,7 @@ maxmind_settings_EditionIDs:
 ## Optional settings
 
 # The directory to store the database files. The default is /usr/share/GeoIP
-maxmind_settings_DatabaseDirectory: ''
+maxmind_settings_DatabaseDirectory: '/usr/share/GeoIP'
 # The host name of the server to use. The default is updates.maxmind.com.
 maxmind_settings_Host: ''
 # The proxy host name or IP address. You may optionally specify a port number, e.g., 127.0.0.1:8888. If no port number is specified, 1080 will be used.

@@ -1,4 +1,12 @@
 ---
+
+- name: Setup '{{ maxmind_settings_DatabaseDirectory }}' directory
+  file:
+    path: '{{ maxmind_settings_DatabaseDirectory }}'
+    owner: '{{ maxmind_username }}'
+    mode: '0755'
+    state: directory
+
 - name: Configure geoipupdate
   template:
     src: 'GeoIP.conf.j2'
