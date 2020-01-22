@@ -1,5 +1,4 @@
 ---
-- include: setup-el.yml
-  when: ansible_os_family == 'RedHat'
-
+- include: setup.yml
 - include: configuration.yml
+

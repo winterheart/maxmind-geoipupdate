@@ -1,0 +1,15 @@
+---
+- name: Install Maxmind GeoIP packages
+  package:
+    name: '{{ maxmind_package }}'
+    state: present
+
+- name: Gather package facts
+  package_facts:
+    manager: 'auto'
+
+- name: Save {{ maxmind_package }} info
+  set_fact:
+    maxmind_package: "{{ ansible_facts.packages[item][0] }}"
+  with_items: '{{ maxmind_package }}'
+

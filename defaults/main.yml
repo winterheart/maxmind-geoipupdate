@@ -1,5 +1,5 @@
 ---
-maxmind_package_el: 'geoipupdate'
+maxmind_package: 'geoipupdate'
 maxmind_filename: '/etc/GeoIP.conf'
 maxmind_binary: '/usr/bin/geoipupdate'
 maxmind_username: 'root'

@@ -18,8 +18,8 @@ This role installs and configures geoipupdate package.
 ## Supported variables
 
 ```
-# Package to install (RHEL/CentOS/OEL etc)
-maxmind_package_el: 'geoipupdate'
+# Package to install
+maxmind_package: 'geoipupdate'
 # Path to configuration file
 maxmind_filename: '/etc/GeoIP.conf'
 # Path to binary
