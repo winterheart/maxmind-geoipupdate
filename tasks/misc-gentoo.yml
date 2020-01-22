@@ -1,0 +1,6 @@
+---
+- name: Install misc dependencies | Gentoo
+  package:
+    name: 'app-portage/portage-utils'
+    state: present
+

@@ -1,4 +1,8 @@
 ---
+- include: misc-debian.yml
+  when: ansible_os_family == 'Debian'
+- include: misc-gentoo.yml
+  when: ansible_os_family == 'Gentoo'
 - include: setup.yml
 - include: configuration.yml
 
