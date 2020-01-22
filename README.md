@@ -27,6 +27,9 @@ maxmind_filename: '/etc/GeoIP.conf'
 maxmind_binary: '/usr/bin/geoipupdate'
 
 ## Required settings
+# Please note, since 30.12.2019 Maxmind requires valid AccountId / LicenseKey
+# They can be obtained from https://www.maxmind.com/en/home
+# See https://blog.maxmind.com/2019/12/18/significant-changes-to-accessing-and-using-geolite2-databases/
 # Your MaxMind account ID (UserId in geoipupdate <= 2.5).
 maxmind_settings_AccountID: '999999'
 # Your case-sensitive MaxMind license key.
@@ -56,7 +59,6 @@ maxmind_settings_PreserveFileTimes: ''
 # The lock file to use. This ensures only one geoipupdate process can run at a
 # time. The default is .geoipupdate.lock under the DatabaseDirectory.
 maxmind_settings_LockFile: ''
-
 ```
 
 ## License
