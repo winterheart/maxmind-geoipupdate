@@ -25,6 +25,23 @@ maxmind_package_el: 'geoipupdate'
 maxmind_filename: '/etc/GeoIP.conf'
 # Path to binary
 maxmind_binary: '/usr/bin/geoipupdate'
+# Username on behalf of will be runs binary
+maxmind_username: 'root'
+
+# Enable/disable cronjob
+maxmind_cron_enabled: false
+# When start cronjob. If not defined there will be maxmind_cron_time_* effective.
+# Should follow Ansible's cron special_time syntax.
+# (supported values: annually, daily, hourly, monthly, reboot, weekly, yearly).
+maxmind_cron_special_time: ''
+
+# Settings for cronjob start time. By default cron runs every Saturday on 02:10
+maxmind_cron_time_minute: '10'
+maxmind_cron_time_hour: '2'
+maxmind_cron_time_day: '*'
+maxmind_cron_time_weekday: '6'
+maxmind_cron_time_month: '*'
+
 
 ## Required settings
 # Please note, since 30.12.2019 Maxmind requires valid AccountId / LicenseKey

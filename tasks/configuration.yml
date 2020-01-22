@@ -3,10 +3,29 @@
   template:
     src: 'GeoIP.conf.j2'
     dest: '{{ maxmind_filename }}'
-    owner: root
-    group: root
-    mode: 0640
+    owner: '{{ maxmind_username }}'
+    mode: 0600
   notify: Update GeoIP databases
 
-#- name: Install Cron task for autoupdates
+- name: Install Cron task for autoupdates | maxmind_cron_special_time
+  cron:
+    cron_file: geoipupdate
+    special_time: '{{ maxmind_cron_special_time }}'
+    job: '{{ maxmind_binary }}'
+    user: '{{ maxmind_username }}'
+    name: 'geoipupdate cron job'
+  when: maxmind_cron_enabled == true and maxmind_cron_special_time != ""
+
+- name: Install Cron task for autoupdates | maxmind_cron_time_*
+  cron:
+    cron_file: geoipupdate
+    minute: '{{ maxmind_cron_time_minute }}'
+    hour: '{{ maxmind_cron_time_hour }}'
+    day: '{{ maxmind_cron_time_day }}'
+    weekday: '{{ maxmind_cron_time_weekday }}'
+    month: '{{ maxmind_cron_time_month }}'
+    job: '{{ maxmind_binary }}'
+    user: '{{ maxmind_username }}'
+    name: 'geoipupdate cron job'
+  when: maxmind_cron_enabled == true and maxmind_cron_special_time == ""
 
