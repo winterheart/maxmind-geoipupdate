@@ -12,4 +12,3 @@
   set_fact:
     maxmind_package: "{{ ansible_facts.packages[item][0] }}"
   with_items: '{{ maxmind_package }}'
-

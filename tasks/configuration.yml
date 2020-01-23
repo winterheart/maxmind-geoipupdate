@@ -21,7 +21,7 @@
     job: '{{ maxmind_binary }}'
     user: '{{ maxmind_username }}'
     name: 'geoipupdate cron job'
-  when: maxmind_cron_enabled == true and maxmind_cron_special_time != ""
+  when: maxmind_cron_enabled and maxmind_cron_special_time | length > 0
 
 - name: Install Cron task for autoupdates | maxmind_cron_time_*
   cron:
@@ -34,5 +34,4 @@
     job: '{{ maxmind_binary }}'
     user: '{{ maxmind_username }}'
     name: 'geoipupdate cron job'
-  when: maxmind_cron_enabled == true and maxmind_cron_special_time == ""
-
+  when: maxmind_cron_enabled and maxmind_cron_special_time | length == 0

@@ -3,4 +3,3 @@
   package:
     name: 'app-portage/portage-utils'
     state: present
-

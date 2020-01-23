@@ -42,4 +42,3 @@ maxmind_settings_ProxyUserPassword: ''
 maxmind_settings_PreserveFileTimes: ''
 # The lock file to use. This ensures only one geoipupdate process can run at a time. The default is .geoipupdate.lock under the DatabaseDirectory.
 maxmind_settings_LockFile: ''
-
