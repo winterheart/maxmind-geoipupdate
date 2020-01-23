@@ -25,7 +25,7 @@ Host {{ maxmind_settings_Host }}
 {% if maxmind_settings_Proxy is defined and maxmind_settings_Proxy|length %}
 Proxy {{ maxmind_settings_Proxy }}
 {% endif %}
-{% if maxmind_settings_ProxyUserPassword is defined and maxmind_settings_ProxyUserPassword|length %}
+{% if maxmind_settings_ProxyUserPassword is defined and maxmind_settings_ProxyUserPassword|string|length %}
 ProxyUserPassword {{ maxmind_settings_ProxyUserPassword }}
 {% endif %}
 {% if maxmind_settings_PreserveFileTimes is defined and maxmind_settings_PreserveFileTimes|length %}
