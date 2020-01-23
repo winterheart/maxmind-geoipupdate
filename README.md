@@ -9,7 +9,7 @@ This role installs and configures geoipupdate package.
 - hosts: all
   sudo: yes
   roles:
-    - { role: maxmind-geoipupdate }
+    - { role: winterheart.maxmind_geoipupdate }
   vars:
     maxmind_settings_AccountID: '999999'
     maxmind_settings_LicenseKey: '000000000000'
@@ -46,11 +46,11 @@ maxmind_cron_time_month: '*'
 # Please note, since 30.12.2019 Maxmind requires valid AccountId / LicenseKey
 # They can be obtained from https://www.maxmind.com/en/home
 # See https://blog.maxmind.com/2019/12/18/significant-changes-to-accessing-and-using-geolite2-databases/
-# Your MaxMind account ID (UserId in geoipupdate <= 2.5).
+# Your MaxMind account ID (UserId in geoipupdate < 3.1.1).
 maxmind_settings_AccountID: '999999'
 # Your case-sensitive MaxMind license key.
 maxmind_settings_LicenseKey: '000000000000'
-# List of database edition IDs (ProductIds in geoipupdate <= 2.5). Edition IDs 
+# List of database edition IDs (ProductIds in geoipupdate < 3.1.1). Edition IDs 
 # may consist of letters, digits, and dashes (e.g., "GeoIP2-City", "106").
 maxmind_settings_EditionIDs:
   - 'GeoLite2-ASN'
